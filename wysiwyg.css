@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+}
+
+
+
+
+.famous-image{
+    max-width: auto;
+    max-height: 350px;
+}
+
+.famous-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 2em;
+    border-bottom: 1px solid black;
+}
+
+.famous-container:nth-child(even){
+    background-color: lightyellow;
+}
+
+.famous-container:nth-child(odd){
+    background-color: lightblue;
+}
+
+.famous-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 60%;
+}
+
+.famous-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bordered{
+    border:2px dotted black;
+}
