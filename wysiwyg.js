@@ -44,25 +44,25 @@ var famous = [
 var container = document.getElementById("container");
 
 
-for (element in famous){
+for (var i=0; i < famous.length; i++){
     container.innerHTML +=
     `<article class="famous-container">
         <header class="famous-header">
-            <h2 class="famous-name">${famous[element].name}</h2>
-            <h3>${famous[element].title}</h3>
+            <h2 class="famous-name">${famous[i].name}</h2>
+            <h3>${famous[i].title}</h3>
         </header>
         <section class="famous-section">
-            <p>${famous[element].bio}</p>
-            <img src="${famous[element].image}" alt ="picture of ${famous[element].name}" class="famous-image">
+            <p id ="famous-bio${i}">${famous[i].bio}</p>
+            <img src="${famous[i].image}" alt ="picture of ${famous[i].name}" class="famous-image">
         </section>
         <footer>
-            <p> Lifespan: ${famous[element].lifespan.birth} - ${famous[element].lifespan.death} </p>
+            <p> Lifespan: ${famous[i].lifespan.birth} - ${famous[i].lifespan.death} </p>
         </footer>
     </article> `
 
 };
 
-var famousNames = document.getElementsByClassName("famous-name");
+var famousNames = document.getElementsByClassName("famous-header");
 var userInput = document.getElementById("user-input");
 var eventTarget = "";
 var classBio ="";
@@ -71,13 +71,13 @@ for (var i=0;i<famousNames.length;i++){
     famousNames.item(i).addEventListener("click", function(event){
         event.target.classList.toggle("bordered");
         userInput.focus();
-        eventTarget = event.target;
+        eventTarget = document.querySelector();
         console.log(eventTarget);
     });
 }
 userInput.addEventListener("keyup", function(potato){
-    classBio = eventTarget.parentNode.nextSibling;
-    classBio.innerHTML = potato.target.value;
+    console.log(eventTarget);
+    eventTarget.innerHTML = potato.target.value;
 });
 
 
