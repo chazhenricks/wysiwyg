@@ -62,10 +62,15 @@ for (var i=0; i < famous.length; i++){
 
 };
 
+
 var famousNames = document.getElementsByClassName("famous-header");
 var userInput = document.getElementById("user-input");
 var eventTarget = "";
-var classBio ="";
+var userText ="";
+
+function clear(){
+    userInput.value="";
+}
 
 for (var i=0;i<famousNames.length;i++){
     famousNames.item(i).addEventListener("click", function(event){
@@ -78,8 +83,17 @@ for (var i=0;i<famousNames.length;i++){
 
 userInput.addEventListener("keyup", function(potato){
     console.log(eventTarget);
-    eventTarget.innerHTML = potato.target.value;
+    userText = potato.target.value;
+    eventTarget.innerHTML = userText;
+    document.getElementById("wrapper").addEventListener('keyup', function (e) {
+        if (e.keyCode === 13) {
+            clear();
+        }
+    });
+
 });
+
+
 
 
 
