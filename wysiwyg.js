@@ -52,7 +52,7 @@ for (var i=0; i < famous.length; i++){
             <h3>${famous[i].title}</h3>
         </header>
         <section class="famous-section">
-            <p id ="famous-bio${i}">${famous[i].bio}</p>
+            <p class = "famousbio" id ="famous--bio${i}">${famous[i].bio}</p>
             <img src="${famous[i].image}" alt ="picture of ${famous[i].name}" class="famous-image">
         </section>
         <footer>
@@ -71,10 +71,11 @@ for (var i=0;i<famousNames.length;i++){
     famousNames.item(i).addEventListener("click", function(event){
         event.target.classList.toggle("bordered");
         userInput.focus();
-        eventTarget = document.querySelector();
+        eventTarget = event.target.closest("article").querySelector(".famousbio");
         console.log(eventTarget);
-    });
-}
+        });
+    }   ;
+
 userInput.addEventListener("keyup", function(potato){
     console.log(eventTarget);
     eventTarget.innerHTML = potato.target.value;
